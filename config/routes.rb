@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :characters
       resources :users
       resources :likes 
-      resources :score
+      resources :scores
       resources :favorites
       post '/login', to: "auth#create"
       get "user", to: "auth#show"
