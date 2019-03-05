@@ -8,10 +8,15 @@ class ApplicationController < ActionController::API
     request.headers["Authorization"]
   end
 
-  def decoded_token 
-    token = auth_header
-    JWT.decode(token, "poop")[0]
-  end
+  def decode_token     
+    if get_token       
+      begin         
+        JWT.decode(auth_header, 'poop')[0]      
+      rescue JWT::DecodeError        
+        nil       
+      end    
+    end  
+   end
 
   def current_user
     if decoded_token
