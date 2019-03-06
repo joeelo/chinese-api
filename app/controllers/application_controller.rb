@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  # include ActionController::Serialization
 
   def encode_token(payload)
     JWT.encode(payload, "poop")
@@ -8,8 +9,8 @@ class ApplicationController < ActionController::API
     request.headers["Authorization"]
   end
 
-  def decode_token     
-    if get_token       
+  def decode_token    
+    if auth_header       
       begin         
         JWT.decode(auth_header, 'poop')[0]      
       rescue JWT::DecodeError        
@@ -19,8 +20,8 @@ class ApplicationController < ActionController::API
    end
 
   def current_user
-    if decoded_token
-      user_id = decoded_token["user_id"]
+    if decode_token
+      user_id = decode_token["user_id"]
       @user = User.find_by(id: user_id)
     end
   end
