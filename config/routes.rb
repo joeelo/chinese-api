@@ -5,11 +5,13 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :characters
       resources :users
-      resources :likes 
+      resources :likes, except: [:destroy]
       resources :scores
       resources :favorites
       post '/login', to: "auth#create"
       get "user", to: "auth#show"
+      get "user/:id/likes", to: "likes#get_likes"
+      post "/likesdestroy", to: "likes#destroy"
     end
   end
 
