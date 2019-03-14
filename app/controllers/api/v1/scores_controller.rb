@@ -10,6 +10,11 @@ class Api::V1::ScoresController < ApplicationController
     render json: @score
   end
 
+  def get_scores 
+    @user = User.find(params[:id])
+    render json: @user.scores
+  end
+
   private
 
   def scores_params

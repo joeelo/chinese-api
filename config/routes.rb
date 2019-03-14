@@ -7,10 +7,10 @@ Rails.application.routes.draw do
       resources :users
       resources :likes, except: [:destroy]
       resources :scores
-      resources :favorites
       post '/login', to: "auth#create"
       get "user", to: "auth#show"
       get "user/:id/likes", to: "likes#get_likes"
+      get "user/:id/scores", to: "scores#get_scores"
       post "/likesdestroy", to: "likes#destroy"
     end
   end
