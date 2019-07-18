@@ -4,7 +4,10 @@ This chinese learning game is meant to help with character recognition and learn
 
 You must sign in/ create an account to use this application
 
-after pulling this application you must run
+## Demo Video
+https://www.youtube.com/watch?v=aBKSVe-cOwo&feature=youtu.be
+
+If you pull this application with intent to run
 
 ## Run
 
