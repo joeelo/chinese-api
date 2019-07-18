@@ -1,24 +1,20 @@
-# README
+# Loashi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This chinese learning game is meant to help with character recognition and learning by saving your favorite characters and coming back to them at a later time!
 
-Things you may want to cover:
+You must sign in/ create an account to use this application
 
-* Ruby version
+after pulling this application you must run
 
-* System dependencies
+## Run
 
-* Configuration
+ 1) rails db:create
+ 2) rails db:migrate
+ 3) rails db:seed
 
-* Database creation
+## Built With 
+ 1) Javascript / React - frontend
+ 2) Ruby / Rails - Backend
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Created by
+ Joseph Lorenzo - https://github.com/joeelo
